@@ -13,7 +13,8 @@
     "python -c \"import pathlib,sys; sys.exit(0 if pathlib.Path('docs/theorem-d1-audit.md').exists() else 1)\""
   ],
   "artifacts": [
-    "artifacts/theorem-d1-audit.md"
+    "artifacts/theorem-d1-audit.md",
+    "artifacts/threshold-bound-analysis.md"
   ],
   "notes": "No internal reduction gap found between Theorem D.1 and Theorem 4. However, Theorem D.1 requires network size s >= 2^{217} before achieving any speedup, rendering the algorithm non-applicable to deployed curves (NIST P-256, Ed25519)."
 }
