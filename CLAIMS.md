@@ -34,7 +34,7 @@ proved claim.
 | C3 | Lemma 1: assuming C2, a word in a BTN-encoded language can be found, or emptiness detected, in `2^{O(s/sqrt(log s))}` time and polynomial space. | open | C2 | — |
 | C4 | Lemma 2: addition, comparison, zero test, gated equality, and copying have parsimonious `O(d)`-edge, constant-degree BTN encodings. | open | — | — |
 | C5 | Theorem 3: `d`-bit integer multiplication has a parsimonious encoding with fewer than `1100(d+1)` edges and maximum degree below `136(d+1)^{3/4}`. | tested | C4 | src/btn/encodings/integer_mult_lowdegree.py; tests/test_int_mult_lowdegree.py |
-| C6 | Lemma 8: canonical modular addition and multiplication have parsimonious `O(d)`-edge, `O(d^{3/4})`-degree encodings. | open | C4, C5 | — |
+| C6 | Lemma 8: canonical modular addition and multiplication have parsimonious `O(d)`-edge, `O(d^{3/4})`-degree encodings. | tested | C4, C5 | src/btn/encodings/modular.py; tests/test_modular.py |
 | C7 | Corollary 1: systems of modular constraints have an `O((n_c+n_u+n_w)d)`-edge encoding with the same degree bound. | open | C6 | — |
 | C8 | Corollary 2: elliptic-curve point addition and `m`-fold sums have parsimonious `O(mb)`-edge, `O(b^{3/4})`-degree encodings. | open | C7 | — |
 | C9 | Lemma 9: the random-hash factor bases have the stated membership probabilities, size bound, and independence. | tested | — | src/btn/factor_base.py; tests/test_coverage.py |

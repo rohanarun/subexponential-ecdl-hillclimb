@@ -1,0 +1,13 @@
+{
+  "task_id": "T07",
+  "claim": "C6",
+  "title": "Low-degree modular addition and multiplication (Lemma 8)",
+  "status": "open",
+  "verifier": "python -m pytest tests/test_modular.py -q",
+  "returncode": 0,
+  "timed_out": false,
+  "passed": true,
+  "finished_at": "2026-10-30T20:39:42.685416+00:00",
+  "stdout_tail": ".................                                                        [100%]\n17 passed in 12.02s\n",
+  "stderr_tail": ""
+}

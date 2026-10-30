@@ -1,7 +1,7 @@
 id: T07
 claim: C6
 title: Low-degree modular addition and multiplication (Lemma 8)
-status: open
+status: done
 goal: >
   Build canonical modular encodings by guessing quotients and checking integer
   identities with the low-degree multiplication network. Verify parsimony on
