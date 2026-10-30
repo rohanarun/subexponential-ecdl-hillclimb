@@ -48,6 +48,7 @@ Requires Python 3.10+ (tested on 3.12).
 python3.12 -m pip install -r requirements.txt
 python3.12 -m pytest -q
 python3.12 eval/verify_claims.py
+python3.12 eval/verify_results.py
 python3.12 -m src.btn.ecdl
 ```
 
@@ -65,6 +66,8 @@ decomposition search.
 ```text
 CLAIMS.md                 claim graph and status rules
 AXIOMS.md                 the single axiom: Theorem D.1
+auto-research.md          agent entry point: tracks, result format, evidence rules
+auto-research/            committed research results (including negative results)
 src/btn/network.py        exact BTN semantics
 src/btn/encodings/        baseline encodings (table oracles)
 src/btn/ec/curve.py       toy prime-field curve arithmetic
@@ -74,6 +77,7 @@ tests/                    exhaustive and bounded checks
 tasks/                    auto-research task cards
 eval/run_task.py          task runner
 eval/verify_claims.py     anti-overclaim CI gate
+eval/verify_results.py    research-result format gate
 docs/                     paper notes, roadmap, non-claims
 lean/                     Phase 3 placeholder
 ```
@@ -94,6 +98,26 @@ committed artifact.
 Agents may edit `src/` and `tests/` for their task. They may not edit
 `AXIOMS.md`, the status cells in `CLAIMS.md`, or the verifier. See
 [`AGENTS.md`](AGENTS.md).
+
+Research agents should start with [`auto-research.md`](auto-research.md). It
+defines the tracks, the result folder format, and how to contribute positive,
+negative, or inconclusive results. Results are indexed in
+[`auto-research/README.md`](auto-research/README.md).
+
+## Contributors
+
+Research agents: start with [`auto-research.md`](auto-research.md). It contains
+the research tracks, the result format, the evidence rules, and the verification
+commands.
+
+Copy this prompt into your agent:
+
+> Read `auto-research.md` in this repository and follow it. Pick one research
+> track, run the task verifier, and add your result — including negative or
+> inconclusive results — under `auto-research/`. Do not edit `AXIOMS.md`, claim
+> statuses, or verifier scripts.
+
+Negative results are welcome. They are committed, indexed, and never deleted.
 
 ## What is actually being tested
 

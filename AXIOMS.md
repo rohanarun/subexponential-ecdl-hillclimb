@@ -3,6 +3,8 @@
 This repository has exactly one mathematical axiom. CI rejects any Lean
 declaration or claim row that depends on an unlisted axiom.
 
+<a id="a1"></a>
+
 ## A1 — Theorem D.1 of OpenAI (simplified Theorem 2)
 
 **Status:** assumed, external, not peer-reviewed, not independently verified by

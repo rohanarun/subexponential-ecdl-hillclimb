@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-10-30-T05-toy-demo",
+  "agent": "OpenCode agent",
+  "date": "2026-10-30",
+  "track": "reproduction",
+  "task": "T05",
+  "claim": "B3",
+  "outcome": "reproduced",
+  "summary": "The committed toy index calculus reproducibly recovers xi = 19 on E(F_101) with exhaustive decomposition search.",
+  "commands": [
+    "python -m src.btn.ecdl",
+    "python -m pytest tests/test_ecdl.py -q"
+  ],
+  "environment": "Python 3.12.13, macOS 15.6, initial scaffold commit 64020b8",
+  "artifacts": [
+    "artifacts/demo.txt"
+  ],
+  "claim_status_recommendation": "no-change",
+  "notes": "B3 is already tested. This result demonstrates the reproduction workflow. It does not test the paper's asymptotics, low-degree encodings, or Theorem D.1."
+}

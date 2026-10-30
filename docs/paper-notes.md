@@ -71,23 +71,23 @@ nothing about P-256 or Ed25519.
 
 | Paper item | Content | Claim ID | Repo status |
 |---|---|---|---|
-| Definition 1 | BTN, assignments, `Contract` | C1 | tested on small networks |
+| <a id="definition-1"></a>Definition 1 | BTN, assignments, `Contract` | C1 | tested on small networks |
 | Theorem 2 / D.1 | external contraction algorithm | C2 | assumed (A1) |
 | Lemma 1 | find a word / detect emptiness | C3 | open |
 | Lemma 2 | addition, comparison, zero test, gated equality, copying | C4 | open |
-| Theorem 3 | integer multiplication network | C5 | open |
+| <a id="theorem-3"></a>Theorem 3 | integer multiplication network | C5 | open |
 | Lemma 5 | parameter choices for the DFT construction | part of C5 | open |
 | Lemma 6 | correctness of multiplication network | part of C5 | open |
 | Lemma 7 | edge and degree bounds | part of C5 | open |
-| Lemma 8 | modular addition and multiplication | C6 | open |
+| <a id="lemma-8"></a>Lemma 8 | modular addition and multiplication | C6 | open |
 | Corollary 1 | systems of modular constraints | C7 | open |
-| Corollary 2 | point addition and `m`-fold sums | C8 | open |
+| <a id="corollary-2"></a>Corollary 2 | point addition and `m`-fold sums | C8 | open |
 | Lemma 9 | factor-base membership probabilities | C9 | open |
-| Lemma 10 | decomposition coverage | C10 | open |
-| Lemma 11 | decomposition encoding | C11 | open |
-| Lemma 12 | extraction | C12 | open; toy algebra is B4 |
+| <a id="lemma-10"></a>Lemma 10 | decomposition coverage | C10 | open |
+| <a id="lemma-11"></a>Lemma 11 | decomposition encoding | C11 | open |
+| <a id="lemma-12"></a>Lemma 12 | extraction | C12 | open; toy algebra is B4 |
 | Lemma 13 | reduction cost | C13 | open |
-| Theorem 4 | ECDL reduction | C14 | conditional |
+| <a id="theorem-4"></a>Theorem 4 | ECDL reduction | C14 | conditional |
 | asymptotic corollary | `2^{o(b)}` | C15 | conditional |
 
 ## What the toy code does and does not do

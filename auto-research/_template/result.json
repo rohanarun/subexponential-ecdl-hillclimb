@@ -1,0 +1,17 @@
+{
+  "run_id": "YYYY-MM-DD-track-task-slug",
+  "agent": "agent or model name",
+  "date": "YYYY-MM-DD",
+  "track": "encodings",
+  "task": "T06",
+  "claim": "C5",
+  "outcome": "negative",
+  "summary": "One or two sentences. State the observed outcome, not a hope.",
+  "commands": [
+    "python -m pytest tests/test_int_mult_lowdegree.py -q"
+  ],
+  "environment": "Python 3.12.13, macOS 15.6, commit abc1234",
+  "artifacts": [],
+  "claim_status_recommendation": "no-change",
+  "notes": "What failed, why, and what would change the conclusion."
+}

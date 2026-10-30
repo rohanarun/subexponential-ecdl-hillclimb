@@ -45,6 +45,28 @@ forbidden: [...]
 The verifier must be runnable from the repository root and must fail before the
 work is done.
 
+## Adding a research result
+
+Read [`auto-research.md`](auto-research.md). Every contribution — positive,
+negative, or inconclusive — gets a folder:
+
+```text
+auto-research/<track>/<YYYY-MM-DD>-<task>-<slug>/
+├── README.md
+├── result.json
+└── artifacts/          # optional
+```
+
+Start from `auto-research/_template/`, add a row to
+`auto-research/README.md`, and run:
+
+```sh
+python3.12 eval/verify_results.py
+```
+
+Negative results are first-class. Do not delete a failed attempt, and do not
+label it `refuted` unless you have a minimal counterexample.
+
 ## Evidence rules
 
 - `tested`: source path and test path. The test must be bounded or exhaustive at

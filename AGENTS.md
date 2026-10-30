@@ -4,6 +4,12 @@ You are working in a research repository around a **conditional** paper. The
 most important rule is: do not turn a conditional claim into an unconditional
 one.
 
+## Start here
+
+Read [`auto-research.md`](auto-research.md) first. It defines the research
+tracks, the result folder format, the evidence rules, and how to contribute
+positive, negative, or inconclusive results under `auto-research/`.
+
 ## Mission
 
 Advance one claim in `CLAIMS.md` at a time. A claim advances only when its
@@ -30,7 +36,7 @@ verifier passes and its evidence column points at the committed artifact.
 
 ## Workflow
 
-1. Pick an `open` task from `tasks/`.
+1. Pick a track in `auto-research.md` and an `open` task from `tasks/`.
 2. Read its claim and inputs.
 3. Implement the smallest change that makes the verifier meaningful.
 4. Run:
@@ -38,15 +44,21 @@ verifier passes and its evidence column points at the committed artifact.
    ```sh
    python3.12 -m pytest -q
    python3.12 eval/verify_claims.py
+   python3.12 eval/verify_results.py
    python3.12 eval/run_task.py tasks/<your-task>.yaml
    ```
 
-5. Commit the source, tests, and task result.
-6. Open a PR that states:
+5. Write a result under `auto-research/<track>/<YYYY-MM-DD>-<task>-<slug>/`
+   using `auto-research/_template/`, and add an index row.
+6. Commit the source, tests, task result, and research result.
+7. Open a PR that states:
    - the claim ID;
    - what changed;
    - the verifier output;
    - what is still not proved.
+
+Negative and inconclusive results follow the same workflow. They are evidence,
+not failures to hide.
 
 ## Claim promotion
 
