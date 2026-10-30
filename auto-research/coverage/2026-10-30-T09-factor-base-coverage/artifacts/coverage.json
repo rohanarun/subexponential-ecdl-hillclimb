@@ -1,0 +1,125 @@
+{
+  "task": "T09",
+  "claim": "C10",
+  "title": "Factor-base coverage experiments (Lemma 10)",
+  "description": "Empirical coverage rates for random linear-hash factor bases on toy elliptic curves",
+  "status": "passed",
+  "total_experiments": 6,
+  "all_bounds_satisfied": true,
+  "experiments": [
+    {
+      "p": 109,
+      "r": 127,
+      "m": 2,
+      "s": 223,
+      "tau": 36,
+      "L": 20.3408,
+      "threshold_required": 20,
+      "hypothesis_met": true,
+      "trials": 300,
+      "successes": 292,
+      "empirical_rate": 0.9733,
+      "ci_95": [
+        0.9483,
+        0.9864
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    },
+    {
+      "p": 109,
+      "r": 127,
+      "m": 2,
+      "s": 223,
+      "tau": 40,
+      "L": 22.6009,
+      "threshold_required": 20,
+      "hypothesis_met": true,
+      "trials": 300,
+      "successes": 294,
+      "empirical_rate": 0.98,
+      "ci_95": [
+        0.9571,
+        0.9908
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    },
+    {
+      "p": 109,
+      "r": 127,
+      "m": 2,
+      "s": 223,
+      "tau": 48,
+      "L": 27.1211,
+      "threshold_required": 20,
+      "hypothesis_met": true,
+      "trials": 300,
+      "successes": 300,
+      "empirical_rate": 1.0,
+      "ci_95": [
+        0.9874,
+        1.0
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    },
+    {
+      "p": 139,
+      "r": 131,
+      "m": 2,
+      "s": 281,
+      "tau": 36,
+      "L": 16.6548,
+      "threshold_required": 20,
+      "hypothesis_met": false,
+      "trials": 300,
+      "successes": 269,
+      "empirical_rate": 0.8967,
+      "ci_95": [
+        0.8571,
+        0.9262
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    },
+    {
+      "p": 139,
+      "r": 131,
+      "m": 2,
+      "s": 281,
+      "tau": 40,
+      "L": 18.5053,
+      "threshold_required": 20,
+      "hypothesis_met": false,
+      "trials": 300,
+      "successes": 284,
+      "empirical_rate": 0.9467,
+      "ci_95": [
+        0.9151,
+        0.9669
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    },
+    {
+      "p": 139,
+      "r": 131,
+      "m": 2,
+      "s": 281,
+      "tau": 48,
+      "L": 22.2064,
+      "threshold_required": 20,
+      "hypothesis_met": true,
+      "trials": 300,
+      "successes": 296,
+      "empirical_rate": 0.9867,
+      "ci_95": [
+        0.9662,
+        0.9948
+      ],
+      "lemma_10_bound": 0.4,
+      "bound_satisfied": true
+    }
+  ]
+}

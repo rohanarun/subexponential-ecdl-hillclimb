@@ -1,7 +1,7 @@
 id: T09
 claim: C10
 title: Factor-base coverage experiments (Lemma 10)
-status: open
+status: done
 goal: >
   Implement the random-hash factor bases and estimate decomposition coverage on
   toy curves across the stated parameter range. Record confidence intervals and

@@ -37,8 +37,8 @@ proved claim.
 | C6 | Lemma 8: canonical modular addition and multiplication have parsimonious `O(d)`-edge, `O(d^{3/4})`-degree encodings. | open | C4, C5 | — |
 | C7 | Corollary 1: systems of modular constraints have an `O((n_c+n_u+n_w)d)`-edge encoding with the same degree bound. | open | C6 | — |
 | C8 | Corollary 2: elliptic-curve point addition and `m`-fold sums have parsimonious `O(mb)`-edge, `O(b^{3/4})`-degree encodings. | open | C7 | — |
-| C9 | Lemma 9: the random-hash factor bases have the stated membership probabilities, size bound, and independence. | open | — | — |
-| C10 | Lemma 10: decomposition coverage holds for the stated parameter range. | open | C9 | — |
+| C9 | Lemma 9: the random-hash factor bases have the stated membership probabilities, size bound, and independence. | tested | — | src/btn/factor_base.py; tests/test_coverage.py |
+| C10 | Lemma 10: decomposition coverage holds for the stated parameter range. | tested | C9 | src/btn/factor_base.py; tests/test_coverage.py; eval/results/coverage.json |
 | C11 | Lemma 11: the decomposition relation has an `O(mb)`-edge, `O(b^{3/4})`-degree encoding and is solvable under C2. | open | C2, C8, C10 | — |
 | C12 | Lemma 12: conditional on collecting `N + 1` successful relations, the reduction recovers `xi` with probability `1 - 1/r`. | open | — | — |
 | C13 | Lemma 13: the reduction cost is `2^{O(b/m + mb/sqrt(log b))}` under the stated decomposition-query bound. | open | C3, C9, C10, C11, C12 | — |

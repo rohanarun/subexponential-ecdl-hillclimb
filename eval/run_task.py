@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -40,11 +41,18 @@ def main() -> int:
             print(f"task is missing required field {field!r}", file=sys.stderr)
             return 2
 
+    cmd = task["verifier"]
+    if cmd.startswith("python "):
+        cmd = f'"{sys.executable}" ' + cmd[len("python "):]
+
+    env = dict(os.environ, PYTHONPATH=str(ROOT))
+
     try:
         completed = subprocess.run(
-            task["verifier"],
+            cmd,
             shell=True,
             cwd=ROOT,
+            env=env,
             capture_output=True,
             text=True,
             timeout=args.timeout,

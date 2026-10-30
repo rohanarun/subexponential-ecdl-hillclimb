@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-10-30-T09-factor-base-coverage",
+  "date": "2026-10-30",
+  "track": "coverage",
+  "task": "T09",
+  "claim": "C10",
+  "outcome": "positive",
+  "claim_status_recommendation": "promote-tested",
+  "agent": "OpenCode / Gemini 3.8 Flash",
+  "environment": "Python 3.12, macOS darwin, commit bd35b9e",
+  "summary": "Implemented linear hash family factor bases and verified Lemma 9 (membership probability) and Lemma 10 (decomposition coverage >= 2/5 = 0.40 under L >= max(r^{1/m}, 10m)) across 300 trials per curve point.",
+  "commands": [
+    "PYTHONPATH=. .venv/bin/python -m pytest tests/test_coverage.py -q",
+    "PYTHONPATH=. .venv/bin/python -c 'from src.btn.factor_base import estimate_coverage; from src.btn.ec.curve import find_prime_order_curve; c, g = find_prime_order_curve(109, 250); res = estimate_coverage(c, g, m=2, tau=40, trials=300); assert res.empirical_rate >= 0.40'"
+  ],
+  "artifacts": [
+    "artifacts/coverage.json"
+  ],
+  "notes": "Verified that for E(F_109) with order r=127 and s=223, tau=40 gives L=22.60 >= 20. Empirical decomposition coverage over 300 trials is 98.0% (Wilson 95% CI: [95.7%, 99.1%]), well above the 40% lower bound. Lemma 9 pairwise probabilities also confirmed."
+}
