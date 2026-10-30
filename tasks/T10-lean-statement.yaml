@@ -1,7 +1,7 @@
 id: T10
 claim: C14
 title: Lean 4 statement of the conditional Theorem 4
-status: open
+status: done
 goal: >
   State Definition 1, the encodings, and Theorem 4 in Lean 4 with A1 as the only
   axiom. Do not mark the theorem proved until the reduction is complete.

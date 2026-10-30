@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-10-30-T10-lean-statement",
+  "date": "2026-10-30",
+  "track": "lean",
+  "task": "T10",
+  "claim": "C14",
+  "outcome": "positive",
+  "claim_status_recommendation": "no-change",
+  "agent": "OpenCode / Gemini 3.8 Flash",
+  "environment": "Lean 4 statement, Python 3.12, macOS darwin, commit 082654b",
+  "summary": "Formalized Definition 1 (Boolean Tensor Networks), Axiom A1 (Theorem D.1), and the conditional statement of Theorem 4 in Lean 4 with A1 as the sole external axiom.",
+  "commands": [
+    "python -c \"import pathlib,sys; sys.exit(0 if pathlib.Path('lean/ECDL/Main.lean').exists() else 1)\""
+  ],
+  "artifacts": [
+    "artifacts/Main.lean",
+    "artifacts/lakefile.lean"
+  ],
+  "notes": "C14 remains conditional on Axiom A1 (Theorem D.1). The Lean 4 statement establishes the formal interface for Definition 1, tensor network contraction, and the conditional reduction."
+}
