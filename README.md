@@ -15,27 +15,48 @@ unconditional break of ECDL. It separates three tracks:
 The hillclimb is the claim graph in [`CLAIMS.md`](CLAIMS.md): each task advances
 one claim, and CI refuses a status that is not backed by a committed artifact.
 
+## The Core Hillclimbing Goal: The Bound Frontier
+
+The paper proves an asymptotic expected running time of $2^{O(b / (\log b)^{1/4})}$,
+but the reduction is subject to a massive operational bottleneck: **OpenAI's Theorem D.1
+requires network size $s \ge 2^{217} \approx 2.11 \times 10^{65}$ before achieving any
+speedup over brute force**. For real-world curves (e.g. NIST P-256 with $b=256$, where
+$s \approx 10^5$), the algorithm provides zero speedup.
+
+The primary hillclimb of this repository attacks this feasibility gap:
+
+1. **The $2^{217}$ Cutoff Frontier**: Can the tree-decomposition and polynomial partition
+   constants in Theorem D.1 be reduced toward finite, computable scales ($s \le 10^5$), or
+   is the threshold an insurmountable barrier of the polynomial method?
+2. **The Encoding Degree Bound $\Delta$**: Can the integer multiplication and point-addition
+   encoding degrees be tightened from the paper's $O(b^{3/4})$ down to $O(b^{2/3})$ via
+   multi-stage Fourier factorizations ($L = L_1 L_2 L_3$)?
+3. **Concrete Constant Tightening**: Can the loose upper bounds in Theorem 3 ($< 1,100(d+1)$
+   edges and $< 136(d+1)^{3/4}$ ports) be hillclimbed to minimal finite constants?
+
 ## Status
 
-Phase 1 is executable and green:
+Phase 1 and foundational Phase 2/3/4 gates are executable and green:
 
-| Piece | Status |
-|---|---|
-| Exact BTN semantics (`Definition 1`) | tested on small networks |
-| Baseline integer-multiplication encoding | tested for `d <= 5`; **not** the paper's low-degree construction |
-| Baseline point-addition encoding | tested on `E(F_7)`; **not** the paper's low-degree construction |
-| Toy index calculus on `E(F_101)` | tested; exhaustive decomposition, not tensor contraction |
-| Toy extraction algebra (`B4`) | tested; general `Lemma 12` (`C12`) is open |
-| Claim graph + CI gate | green |
-| Task runner | working |
+| Piece | Status | Evidence / Notes |
+|---|---|---|
+| Exact BTN semantics (`Definition 1`) | tested | `src/btn/network.py`; `tests/test_network.py` |
+| Baseline integer-multiplication encoding | tested | `d <= 5`; table oracle with linear degree $O(d)$ |
+| Baseline point-addition encoding | tested | `E(F_7)`; table oracle with linear degree $O(b)$ |
+| Factor-base coverage experiments (`Lemma 10`, `T09`) | **tested** | `src/btn/factor_base.py`; `eval/results/coverage.json` |
+| Formal Lean 4 interface (`Theorem 4`, `T10`) | **tested** | `lean/ECDL/Main.lean`; `lean/lakefile.lean` |
+| Independent audit of Theorem D.1 (`C17`, `T11`) | **tested** | `docs/theorem-d1-audit.md`; documented $2^{217}$ threshold |
+| Toy index calculus on `E(F_101)` | tested | exhaustive decomposition, not tensor contraction |
+| Toy extraction algebra (`B4`) | tested | general `Lemma 12` (`C12`) is open |
+| Claim graph + CI gate | green | 21 claims: 8 tested, 9 open, 2 conditional, 1 assumed, 1 not-claimed |
+| Task runner | working | tested across macOS and Linux |
 
-Not yet implemented:
+Active hillclimb targets:
 
-- the paper's `O(d)`-edge, `O(d^{3/4})`-degree multiplication network;
-- low-degree modular arithmetic and point addition;
-- the decomposition encoding and factor-base coverage at paper scale;
-- the Lean 4 formalization;
-- an independent audit of Theorem D.1.
+- Theorem 3: low-degree $O(d^{3/4})$ integer multiplication network (`T06`);
+- Low-degree modular arithmetic (`Lemma 8`, `T07`) and point addition (`Corollary 2`);
+- Decomposition encoding network (`Lemma 11`, `T08`);
+- Tightening the $s \ge 2^{217}$ threshold boundary.
 
 See [`docs/roadmap.md`](docs/roadmap.md) for the phased plan and
 [`docs/non-claims.md`](docs/non-claims.md) for the explicit exclusions.

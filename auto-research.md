@@ -8,6 +8,23 @@ The repository studies a **conditional** paper. `C14` and `C15` are
 `conditional`, `C16` is `not-claimed`, and the only axiom is `A1` (Theorem D.1 of
 OpenAI). Do not turn any of that into an unconditional ECDL claim.
 
+## The Core Hillclimbing Objective: Breaking and Tightening the Bounds
+
+The overarching mission of this repository is to **hillclimb the mathematical and
+operational bounds** of the ECDL reduction:
+
+1. **The $2^{217}$ Feasibility Bound (Track D)**: Theorem D.1 of `[Ope26]` has an astronomical
+   cutoff where $\lfloor s / 2^{217} \rfloor = 0$, rendering the algorithm completely inactive
+   for any deployable curve size ($s < 2^{217} \approx 2.11 \times 10^{65}$). Hillclimbers
+   investigate whether the partition and tree-decomposition parameters can be tightened to
+   a realistic finite scale ($s \le 10^5$).
+2. **The Encoding Degree Bound $\Delta$ (Track A)**: Theorem 3 achieves degree $O(d^{3/4})$
+   via a 2-stage Fourier transform split ($L = L_1 L_2$). Hillclimbers construct multi-stage
+   splits ($k \ge 3$) to improve the degree bound toward $O(d^{2/3})$ and $O(d^{1/2})$.
+3. **Concrete Constant Compression (Track A)**: The paper upper-bounds edge count by $< 1,100(d+1)$
+   and degree by $< 136(d+1)^{3/4}$. Hillclimbers optimize limb packing and carry propagation
+   to drive these constants to their minimal mathematical limits.
+
 ## The one rule
 
 > A result is evidence only if another person can rerun the command and get the

@@ -33,7 +33,7 @@ proved claim.
 | C2 | Theorem D.1 of OpenAI (simplified as Theorem 2 in the paper): Boolean tensor contraction with degree `O(s^{9/10})` is computable exactly in time `2^{O(s/sqrt(log s))}` and polynomial space. | assumed | — | AXIOMS.md#a1 |
 | C3 | Lemma 1: assuming C2, a word in a BTN-encoded language can be found, or emptiness detected, in `2^{O(s/sqrt(log s))}` time and polynomial space. | open | C2 | — |
 | C4 | Lemma 2: addition, comparison, zero test, gated equality, and copying have parsimonious `O(d)`-edge, constant-degree BTN encodings. | open | — | — |
-| C5 | Theorem 3: `d`-bit integer multiplication has a parsimonious encoding with fewer than `1100(d+1)` edges and maximum degree below `136(d+1)^{3/4}`. | open | C4 | — |
+| C5 | Theorem 3: `d`-bit integer multiplication has a parsimonious encoding with fewer than `1100(d+1)` edges and maximum degree below `136(d+1)^{3/4}`. | tested | C4 | src/btn/encodings/integer_mult_lowdegree.py; tests/test_int_mult_lowdegree.py |
 | C6 | Lemma 8: canonical modular addition and multiplication have parsimonious `O(d)`-edge, `O(d^{3/4})`-degree encodings. | open | C4, C5 | — |
 | C7 | Corollary 1: systems of modular constraints have an `O((n_c+n_u+n_w)d)`-edge encoding with the same degree bound. | open | C6 | — |
 | C8 | Corollary 2: elliptic-curve point addition and `m`-fold sums have parsimonious `O(mb)`-edge, `O(b^{3/4})`-degree encodings. | open | C7 | — |

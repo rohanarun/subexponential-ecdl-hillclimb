@@ -1,0 +1,13 @@
+{
+  "task_id": "T06",
+  "claim": "C5",
+  "title": "Paper's low-degree integer multiplication network (Theorem 3)",
+  "status": "open",
+  "verifier": "python -m pytest tests/test_int_mult_lowdegree.py -q",
+  "returncode": 0,
+  "timed_out": false,
+  "passed": true,
+  "finished_at": "2026-10-30T19:46:47.965167+00:00",
+  "stdout_tail": ".....                                                                    [100%]\n5 passed in 0.02s\n",
+  "stderr_tail": ""
+}

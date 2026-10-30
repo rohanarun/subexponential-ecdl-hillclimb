@@ -1,7 +1,7 @@
 id: T06
 claim: C5
 title: Paper's low-degree integer multiplication network (Theorem 3)
-status: open
+status: done
 goal: >
   Implement the two-stage Fourier-transform construction with O(d) edges and
   maximum degree O(d^{3/4}), then exhaustively compare it with the baseline

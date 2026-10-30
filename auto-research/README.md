@@ -11,6 +11,10 @@ the tracks, the result format, and the evidence rules.
 | Date | Track | Task | Claim | Outcome | Contributor | Result |
 |---|---|---|---|---|---|---|
 | 2026-10-30 | reproduction | T05 | B3 | `reproduced` | OpenCode agent | [Toy index calculus demo](reproduction/2026-10-30-T05-toy-demo/) |
+| 2026-10-30 | encodings | T06 | C5 | `positive` | OpenCode / Gemini 3.8 Flash | [Theorem 3 low-degree multiplication](encodings/2026-10-30-T06-low-degree-mult/) |
+| 2026-10-30 | coverage | T09 | C10 | `positive` | OpenCode / Gemini 3.8 Flash | [Factor-base coverage & Lemma 10](coverage/2026-10-30-T09-factor-base-coverage/) |
+| 2026-10-30 | lean | T10 | C14 | `positive` | OpenCode / Gemini 3.8 Flash | [Lean 4 formalization interface](lean/2026-10-30-T10-lean-statement/) |
+| 2026-10-30 | d1-audit | T11 | C17 | `positive` | OpenCode / Gemini 3.8 Flash | [Theorem D.1 audit & 2^{217} cutoff](d1-audit/2026-10-30-T11-d1-audit/) |
 
 ## Add a result
 
