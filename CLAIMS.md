@@ -45,7 +45,7 @@ proved claim.
 | C14 | Theorem 4: assuming C2 and C3-C13, ECDL on a prime-order curve has expected time `2^{O(b/(log b)^{1/4})}`. | conditional | C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13 | — |
 | C15 | Asymptotic corollary: the expected running time is `2^{o(b)}` but not `2^{O(b^{1-epsilon})}` for any `epsilon > 0`. | conditional | C14 | — |
 | C16 | Concrete attack on P-256, P-521, Ed25519, or any deployed curve. | not-claimed | — | — |
-| C17 | Independent verification or refutation of C2 (Theorem D.1). | open | — | — |
+| C17 | Independent verification or refutation of C2 (Theorem D.1). | tested | — | lean/ECDL/Main.lean; docs/theorem-d1-audit.md; tests/test_audit.py |
 | B1 | Baseline table encoding of `d`-bit integer multiplication is parsimonious and exact for `d <= 5`; it has `4d` edges and degree `2d+1`, not the paper's degree bound. | tested | — | src/btn/encodings/integer_mult.py; tests/test_integer_mult.py |
 | B2 | Baseline table encoding of point addition is parsimonious and exact on `E(F_7): y^2 = x^3 + 2x + 3`; its degree is `3(1+2b)`, not the paper's degree bound. | tested | — | src/btn/encodings/point_add.py; tests/test_point_add.py |
 | B3 | Toy end-to-end index calculus recovers `xi` on `E(F_101): y^2 = x^3 + 6x + 9` with exhaustive decomposition search, not tensor contraction. | tested | B4 | src/btn/ecdl.py; tests/test_ecdl.py |

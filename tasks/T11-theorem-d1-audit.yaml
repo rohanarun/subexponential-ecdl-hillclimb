@@ -1,7 +1,7 @@
 id: T11
 claim: C17
 title: Independent audit of Theorem D.1
-status: open
+status: done
 goal: >
   Read the pinned OpenAI manuscript and write a claim-by-claim audit of Theorem
   D.1: hypotheses, degree bound, ring choice, runtime, space, and any gaps. A
