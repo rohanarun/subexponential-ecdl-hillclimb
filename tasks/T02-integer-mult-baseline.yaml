@@ -1,0 +1,16 @@
+id: T02
+claim: B1
+title: Baseline parsimonious table encoding of integer multiplication
+status: done
+goal: >
+  Encode d-bit multiplication with one vertex per output bit. This is a semantic
+  oracle with 4d edges and degree 2d+1. It is not the paper's Theorem 3 network.
+inputs:
+  - docs/paper-notes.md#theorem-3
+deliverable: src/btn/encodings/integer_mult.py and tests/test_integer_mult.py
+verifier: python -m pytest tests/test_integer_mult.py -q
+bounds:
+  d: "1..5"
+forbidden:
+  - claiming the paper's O(d^{3/4}) degree bound
+  - editing AXIOMS.md

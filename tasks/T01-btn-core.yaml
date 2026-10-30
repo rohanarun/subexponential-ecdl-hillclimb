@@ -1,0 +1,17 @@
+id: T01
+claim: C1
+title: Exact BTN semantics and exhaustive small-network oracle
+status: done
+goal: >
+  Implement Definition 1 literally: ordered edges, vertex predicates, satisfying
+  assignments, Contract(BTN), and interface-restricted extension counting.
+inputs:
+  - docs/paper-notes.md#definition-1
+deliverable: src/btn/network.py and tests/test_network.py
+verifier: python -m pytest tests/test_network.py -q
+bounds:
+  edges: "<= 22 for full enumeration; <= 24 free edges for extension counting"
+forbidden:
+  - editing AXIOMS.md
+  - editing CLAIMS.md status cells
+  - editing eval/verify_claims.py

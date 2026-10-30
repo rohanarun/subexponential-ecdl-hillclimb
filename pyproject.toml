@@ -1,0 +1,13 @@
+[project]
+name = "subexponential-ecdl-hillclimb"
+version = "0.1.0"
+description = "Claim-by-claim auto-research harness for the conditional subexponential ECDL paper"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["PyYAML>=6.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

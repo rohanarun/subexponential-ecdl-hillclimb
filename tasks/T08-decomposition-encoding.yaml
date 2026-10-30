@@ -1,0 +1,18 @@
+id: T08
+claim: C11
+title: Decomposition encoding (Lemma 11)
+status: open
+goal: >
+  Encode A_i in F_i and A_1 + ... + A_m = R with O(mb) edges and maximum degree
+  O(b^{3/4}), using the point-addition and modular-arithmetic gadgets.
+inputs:
+  - docs/paper-notes.md#lemma-11
+  - tasks/T07-modular-arithmetic.yaml
+deliverable: src/btn/encodings/decomposition.py and tests/test_decomposition.py
+verifier: python -m pytest tests/test_decomposition.py -q
+bounds:
+  curve: "toy prime-order curves"
+  m: "2..3"
+forbidden:
+  - assuming uniqueness of auxiliary values
+  - editing AXIOMS.md

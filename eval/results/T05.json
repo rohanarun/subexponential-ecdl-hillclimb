@@ -1,0 +1,13 @@
+{
+  "task_id": "T05",
+  "claim": "B3",
+  "title": "Toy end-to-end index calculus with exhaustive decomposition",
+  "status": "done",
+  "verifier": "python -m pytest tests/test_ecdl.py -q",
+  "returncode": 0,
+  "timed_out": false,
+  "passed": true,
+  "finished_at": "2026-10-30T18:27:19.760947+00:00",
+  "stdout_tail": ".....                                                                    [100%]\n5 passed in 0.01s\n",
+  "stderr_tail": ""
+}

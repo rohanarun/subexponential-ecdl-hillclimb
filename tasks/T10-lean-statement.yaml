@@ -1,0 +1,18 @@
+id: T10
+claim: C14
+title: Lean 4 statement of the conditional Theorem 4
+status: open
+goal: >
+  State Definition 1, the encodings, and Theorem 4 in Lean 4 with A1 as the only
+  axiom. Do not mark the theorem proved until the reduction is complete.
+inputs:
+  - docs/paper-notes.md
+  - AXIOMS.md
+deliverable: lean/ECDL/Main.lean and lean/lakefile.lean
+verifier: python -c "import pathlib,sys; sys.exit(0 if pathlib.Path('lean/ECDL/Main.lean').exists() else 1)"
+bounds:
+  scope: "statement and interface first; proofs are separate tasks"
+forbidden:
+  - adding axioms beyond A1
+  - using sorry in a claim marked proved
+  - editing AXIOMS.md

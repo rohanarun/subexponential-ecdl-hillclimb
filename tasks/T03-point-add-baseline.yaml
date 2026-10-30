@@ -1,0 +1,17 @@
+id: T03
+claim: B2
+title: Baseline parsimonious table encoding of point addition
+status: done
+goal: >
+  Encode P1 + P2 = P3 on a small prime-field curve with a single predicate over
+  canonical point encodings. This pins the semantics; it is not the paper's
+  Corollary 2 construction.
+inputs:
+  - docs/paper-notes.md#corollary-2
+deliverable: src/btn/encodings/point_add.py and tests/test_point_add.py
+verifier: python -m pytest tests/test_point_add.py -q
+bounds:
+  curve: "E(F_7): y^2 = x^3 + 2x + 3"
+forbidden:
+  - claiming the paper's O(b^{3/4}) degree bound
+  - editing AXIOMS.md

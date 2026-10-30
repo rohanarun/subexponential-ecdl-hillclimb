@@ -1,0 +1,13 @@
+{
+  "task_id": "T01",
+  "claim": "C1",
+  "title": "Exact BTN semantics and exhaustive small-network oracle",
+  "status": "done",
+  "verifier": "python -m pytest tests/test_network.py -q",
+  "returncode": 0,
+  "timed_out": false,
+  "passed": true,
+  "finished_at": "2026-10-30T18:27:19.204459+00:00",
+  "stdout_tail": "......                                                                   [100%]\n6 passed in 0.00s\n",
+  "stderr_tail": ""
+}

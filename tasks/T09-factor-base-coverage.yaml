@@ -1,0 +1,18 @@
+id: T09
+claim: C10
+title: Factor-base coverage experiments (Lemma 10)
+status: open
+goal: >
+  Implement the random-hash factor bases and estimate decomposition coverage on
+  toy curves across the stated parameter range. Record confidence intervals and
+  preserve negative results.
+inputs:
+  - docs/paper-notes.md#lemma-10
+deliverable: src/btn/factor_base.py, tests/test_coverage.py, and eval/results/coverage.json
+verifier: python -m pytest tests/test_coverage.py -q
+bounds:
+  r: "toy primes up to 10^4"
+  trials: "at least 200 per parameter point"
+forbidden:
+  - tuning the hash family after seeing the test target
+  - editing AXIOMS.md

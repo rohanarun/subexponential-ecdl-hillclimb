@@ -1,0 +1,19 @@
+id: T06
+claim: C5
+title: Paper's low-degree integer multiplication network (Theorem 3)
+status: open
+goal: >
+  Implement the two-stage Fourier-transform construction with O(d) edges and
+  maximum degree O(d^{3/4}), then exhaustively compare it with the baseline
+  table encoding for small d.
+inputs:
+  - docs/paper-notes.md#theorem-3
+  - src/btn/encodings/integer_mult.py
+deliverable: src/btn/encodings/integer_mult_lowdegree.py and tests/test_int_mult_lowdegree.py
+verifier: python -m pytest tests/test_int_mult_lowdegree.py -q
+bounds:
+  d: "1..6 exhaustive against the table oracle; edge/degree bounds checked symbolically"
+forbidden:
+  - changing the baseline table encoding
+  - claiming the construction works before the exhaustive comparison passes
+  - editing AXIOMS.md

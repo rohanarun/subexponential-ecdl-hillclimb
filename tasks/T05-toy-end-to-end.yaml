@@ -1,0 +1,18 @@
+id: T05
+claim: B3
+title: Toy end-to-end index calculus with exhaustive decomposition
+status: done
+goal: >
+  Collect relations [u]P + [v]Q = A_1 + ... + A_m on E(F_101), eliminate the
+  factor-base columns, and recover xi. The decomposition step is exhaustive
+  search, not tensor contraction.
+inputs:
+  - docs/paper-notes.md#theorem-4
+deliverable: src/btn/ecdl.py and tests/test_ecdl.py
+verifier: python -m pytest tests/test_ecdl.py -q
+bounds:
+  curve: "E(F_101): y^2 = x^3 + 6x + 9, order 83"
+  m: "2 and 3"
+forbidden:
+  - claiming an asymptotic speedup from the exhaustive search
+  - editing AXIOMS.md

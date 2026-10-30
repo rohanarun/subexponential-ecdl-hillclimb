@@ -1,0 +1,18 @@
+id: T07
+claim: C6
+title: Low-degree modular addition and multiplication (Lemma 8)
+status: open
+goal: >
+  Build canonical modular encodings by guessing quotients and checking integer
+  identities with the low-degree multiplication network. Verify parsimony on
+  small moduli.
+inputs:
+  - docs/paper-notes.md#lemma-8
+  - tasks/T06-low-degree-int-mult.yaml
+deliverable: src/btn/encodings/modular.py and tests/test_modular.py
+verifier: python -m pytest tests/test_modular.py -q
+bounds:
+  q: "small primes, exhaustive words"
+forbidden:
+  - non-canonical residues
+  - editing AXIOMS.md

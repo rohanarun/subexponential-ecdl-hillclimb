@@ -1,0 +1,17 @@
+id: T11
+claim: C17
+title: Independent audit of Theorem D.1
+status: open
+goal: >
+  Read the pinned OpenAI manuscript and write a claim-by-claim audit of Theorem
+  D.1: hypotheses, degree bound, ring choice, runtime, space, and any gaps. A
+  refutation is a valid outcome and must be preserved.
+inputs:
+  - AXIOMS.md#a1
+deliverable: docs/theorem-d1-audit.md
+verifier: python -c "import pathlib,sys; sys.exit(0 if pathlib.Path('docs/theorem-d1-audit.md').exists() else 1)"
+bounds:
+  scope: "theorem statement and proof structure, not a new algorithm"
+forbidden:
+  - claiming a refutation without a concrete counterexample or gap
+  - editing AXIOMS.md

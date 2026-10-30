@@ -1,0 +1,13 @@
+{
+  "task_id": "T02",
+  "claim": "B1",
+  "title": "Baseline parsimonious table encoding of integer multiplication",
+  "status": "done",
+  "verifier": "python -m pytest tests/test_integer_mult.py -q",
+  "returncode": 0,
+  "timed_out": false,
+  "passed": true,
+  "finished_at": "2026-10-30T18:27:19.373524+00:00",
+  "stdout_tail": "........                                                                 [100%]\n8 passed in 0.04s\n",
+  "stderr_tail": ""
+}

@@ -1,0 +1,17 @@
+id: T04
+claim: B4
+title: Extraction algebra over a prime field
+status: done
+goal: >
+  Implement row reduction, nullspace, and left-nullspace over F_r, and verify
+  that a left-null combination of relation rows with nonzero Q coefficient
+  recovers xi on the toy curve.
+inputs:
+  - docs/paper-notes.md#lemma-12
+deliverable: src/btn/linalg.py and tests/test_linalg.py
+verifier: python -m pytest tests/test_linalg.py -q
+bounds:
+  field: "F_83"
+forbidden:
+  - using floating point in the linear algebra
+  - editing AXIOMS.md

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite it and the paper it studies."
+title: "Subexponential ECDL: a claim-by-claim research hillclimb"
+type: software
+authors:
+  - family-names: Arun
+    given-names: Rohan
+year: 2026
+license: MIT
+repository-code: "https://github.com/rohanarun/subexponential-ecdl-hillclimb"
+abstract: >
+  An auto-research harness for the conditional subexponential ECDL paper. The
+  repository separates the paper's reduction from the unverified external
+  theorem it depends on, and gates claim statuses on committed evidence.
+keywords:
+  - elliptic curve discrete logarithm
+  - boolean tensor network
+  - index calculus
+  - formal verification
+  - research automation
