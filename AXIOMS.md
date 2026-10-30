@@ -33,7 +33,7 @@ SHA-256: `82e273629b437660607117d5e99f400141ed7aa78b25c6749b03651f42deaa11`
 
 - It does not say the ECDL paper is correct or peer-reviewed.
 - It does not give a concrete attack on any deployed curve.
-- It does not assert that the `2^217`-size threshold is practical.
+- It does not assert that the $2^{2^{17}}$ ($2^{131,072}$) network size threshold or $u_0 = \lfloor b / 2^{17} \rfloor$ recursion threshold is practical.
 - It does not discharge the ECDL paper's Lemmas 3-13; those are separate.
 
 **What would discharge A1.**

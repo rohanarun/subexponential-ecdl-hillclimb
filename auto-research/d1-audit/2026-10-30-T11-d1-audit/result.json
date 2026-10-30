@@ -8,7 +8,7 @@
   "claim_status_recommendation": "promote-tested",
   "agent": "OpenCode / Gemini 3.8 Flash",
   "environment": "Document audit of [Ope26] and [Boc26], Python 3.12, macOS darwin, commit 675ad3e",
-  "summary": "Completed a claim-by-claim audit of Theorem D.1: confirmed soundness of bipartite edge subdivision, verified exact integer counting in Z_{2^{s+1}}, and documented the critical non-operational threshold s >= 2^{217}.",
+  "summary": "Completed a claim-by-claim audit of Theorem D.1: confirmed soundness of bipartite edge subdivision, verified exact integer counting in Z_{2^{s+1}}, and documented the critical non-operational threshold u_0 = floor(b / 2^{17}).",
   "commands": [
     "python -c \"import pathlib,sys; sys.exit(0 if pathlib.Path('docs/theorem-d1-audit.md').exists() else 1)\""
   ],
@@ -16,5 +16,5 @@
     "artifacts/theorem-d1-audit.md",
     "artifacts/threshold-bound-analysis.md"
   ],
-  "notes": "No internal reduction gap found between Theorem D.1 and Theorem 4. However, Theorem D.1 requires network size s >= 2^{217} before achieving any speedup, rendering the algorithm non-applicable to deployed curves (NIST P-256, Ed25519)."
+  "notes": "No internal reduction gap found between Theorem D.1 and Theorem 4. However, Theorem D.1 requires network size s >= 2^{2^{17}} and u_0 = floor(b / 2^{17}) >= 1 before achieving any speedup, rendering the algorithm non-applicable to deployed curves (NIST P-256, Ed25519) under generic bounds."
 }

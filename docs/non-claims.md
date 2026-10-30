@@ -6,8 +6,8 @@ claim any of the following.
 ## Cryptanalytic claims
 
 - **No attack on P-256, P-521, Ed25519, secp256k1, or any deployed curve.**
-  The paper's saving only applies to networks of size at least `2^217`; the
-  result is asymptotic.
+  The paper's saving only applies to networks of size at least $2^{2^{17}}$ ($2^{131,072}$)
+  with base parameter $u_0 = \lfloor b / 2^{17} \rfloor$; the result is asymptotic.
 - **No key recovery, no signature forgery, no protocol break.**
 - **No claim that the algorithm is practical**, implementable at cryptographic
   scale, or faster than Pollard's rho for any real parameter set.

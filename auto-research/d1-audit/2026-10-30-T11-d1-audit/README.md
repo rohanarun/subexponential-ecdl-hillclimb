@@ -12,7 +12,7 @@
 This audit reviews OpenAI's Theorem D.1 and its specialization to Theorem 2 in the ECDL paper:
 1. **Bipartite Reduction**: Verified that edge subdivision doubles edges to $2s$ without increasing maximum degree beyond $\max(2, \Delta)$.
 2. **Ring Choice**: Verified that specializing $\mathbb{Z}_{2^{P_0}}[X] / X^\ell$ with $\ell = 1, P_0 = s + 1$ allows exact integer count extraction because $0 \le \text{Contract}(\text{BTN}) \le 2^s < 2^{s+1}$.
-3. **Threshold Boundary**: Documented the critical limitation that Theorem D.1's savings require $s \ge 2^{217}$, proving it does not apply to practical elliptic curves ($s < 2^{217}$).
+3. **Threshold Boundary**: Documented the critical limitation that Theorem D.1's savings require $s \ge 2^{2^{17}}$ ($2^{131,072}$) and $u_0 = \lfloor b / 2^{17} \rfloor$, proving it does not apply to practical elliptic curves ($b \le 131,072$ under general bounds).
 
 ## Commands to Verify
 

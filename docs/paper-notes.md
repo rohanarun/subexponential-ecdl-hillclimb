@@ -49,7 +49,8 @@ state that they did not independently verify it. In this repository it is axiom
 
 The saving is `2^{o(b)}`, but not `2^{O(b^{1-epsilon})}` for any `epsilon > 0`.
 The paper notes that the OpenAI proof only saves for networks of size at least
-`2^217`; smaller sizes fall back to brute force. That is why the result says
+$2^{2^{17}}$ ($2^{131,072}$), with internal recursion parameter $u_0 = \lfloor b / 2^{17} \rfloor$;
+smaller sizes fall back to brute force. That is why the result says
 nothing about P-256 or Ed25519.
 
 ## Reduction structure

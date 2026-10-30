@@ -13,11 +13,11 @@ OpenAI). Do not turn any of that into an unconditional ECDL claim.
 The overarching mission of this repository is to **hillclimb the mathematical and
 operational bounds** of the ECDL reduction:
 
-1. **The $2^{217}$ Feasibility Bound (Track D)**: Theorem D.1 of `[Ope26]` has an astronomical
-   cutoff where $\lfloor s / 2^{217} \rfloor = 0$, rendering the algorithm completely inactive
-   for any deployable curve size ($s < 2^{217} \approx 2.11 \times 10^{65}$). Hillclimbers
+1. **The $2^{17} = 131,072$ Feasibility Bound (Track D)**: Theorem D.1 of `[Ope26]` has a
+   cutoff where $u_0 = \lfloor b / 2^{17} \rfloor = 0$, rendering the algorithm inactive
+   for any curve size $b < 131,072$ under generic bounds (and requiring $s \ge 2^{2^{17}}$). Hillclimbers
    investigate whether the partition and tree-decomposition parameters can be tightened to
-   a realistic finite scale ($s \le 10^5$).
+   a realistic finite scale ($C_0 \le 256$).
 2. **The Encoding Degree Bound $\Delta$ (Track A)**: Theorem 3 achieves degree $O(d^{3/4})$
    via a 2-stage Fourier transform split ($L = L_1 L_2$). Hillclimbers construct multi-stage
    splits ($k \ge 3$) to improve the degree bound toward $O(d^{2/3})$ and $O(d^{1/2})$.

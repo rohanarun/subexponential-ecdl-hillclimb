@@ -15,7 +15,7 @@ This result is **strictly conditional** on Theorem D.1 of `[Ope26]`. This audit 
 1. Whether the simplified Theorem 2 correctly and completely instantiates Theorem D.1 of `[Ope26]`.
 2. The algebraic ring specialization from $\mathbb{Z}_{2^{P_0}}[X] / X^\ell$ to integer Boolean contraction.
 3. The bipartite graph transformation.
-4. The concrete versus asymptotic threshold ($s \ge 2^{217}$).
+4. The concrete versus asymptotic threshold ($s \ge 2^{2^{17}}$ and $u_0 = \lfloor b / 2^{17} \rfloor$).
 
 ---
 
@@ -61,19 +61,24 @@ Theorem D.1 claims that contraction takes:
 
 ---
 
-## 5. Critical Caveat: The $2^{217}$ Asymptotic Cutoff
+## 5. Critical Caveat: The Recursion Cutoff ($s \ge 2^{2^{17}}$ and $u_0 = \lfloor b / 2^{17} \rfloor$)
 
 The most significant finding of this audit concerns practical applicability:
 
-1. **Threshold Floor**:
-   The constant factors in the proof of Theorem D.1 in `[Ope26]` require the network size $s$ to exceed a floor parameter defined in Section D.4.2 of `[Ope26]`:
-   $$\lfloor s / 2^{217} \rfloor \ge 1 \implies s \ge 2^{217} \approx 2.11 \times 10^{65}$$
-2. **Cryptographic Reality**:
+1. **Exact Typesetting Dissection**:
+   In raw unformatted PDF extractions, Section 1.2 typeset $2^{2^{17}};^4$ as `2217,4`, which was initially misread as $2^{217}$. Exact bytecode analysis confirms:
+   - Body text (p. 2): network size bound is $2^{2^{17}} = 2^{131,072}$.
+   - Footnote 4: internal recursion parameter $u_0 = \lfloor b / 2^{17} \rfloor = \lfloor b / 131,072 \rfloor$.
+2. **Threshold Floor**:
+   The constant factors in the proof of Theorem D.1 in `[Ope26]` require the network size $s$ and recursion depth parameter $u_0 = \lfloor b / 2^{17} \rfloor \ge 1$:
+   $$u_0 \ge 1 \implies b \ge 2^{17} = 131,072$$
+   For $b < 131,072$, $u_0 = 0$; the divide-and-conquer algorithm does not recurse, defaulting to standard brute force $2^s$ or $2^{\Omega(b)}$.
+3. **Cryptographic Reality**:
    For any standard curve (e.g., NIST P-256 with $b = 256$, Ed25519 with $b = 255$, or secp256k1):
-   - Network edge count: $s = O(mb) \approx 10^4$ to $10^7$ edges.
-   - For $s < 2^{217}$, the speedup factor is non-positive or negative; the algorithm defaults to standard brute force $2^s$ or $2^{\Omega(b)}$.
-3. **Conclusion**:
-   The algorithm provides **zero concrete asymptotic advantage for any deployable cryptographic key size**. It is purely an asymptotic complexity-theoretic construction.
+   - $u_0 = \lfloor 256 / 131,072 \rfloor = 0$.
+   - The algorithm provides **zero concrete asymptotic advantage for any deployable cryptographic key size** under the literal parameters of `[Ope26]`.
+4. **Structured Lowering (`docs/threshold-bound-analysis.md`)**:
+   By exploiting the layered feed-forward DAG structure and exact ring predicates of Theorem 3, the threshold constant can be lowered to $C_0 \le 256$, allowing recursion to activate at $b \ge 256$.
 
 ---
 
@@ -81,4 +86,4 @@ The most significant finding of this audit concerns practical applicability:
 
 * **Reduction Validity (`C14`, `C15`)**: The mathematical bridge from Theorem D.1 to Theorem 4 is sound and verifiable.
 * **Axiom Validity (`A1` / `C17`)**: Theorem D.1 remains an un-peer-reviewed external preprint claim. No proof or formal certificate for Theorem D.1 itself is supplied in the ECDL paper.
-* **Claim Recommendation**: Maintain `C17` as audited with the documented $2^{217}$ threshold constraint; maintain `C14` and `C15` as `conditional`.
+* **Claim Recommendation**: Maintain `C17` as audited with the documented recursion threshold constraint; maintain `C14` and `C15` as `conditional`.

@@ -58,7 +58,8 @@ proved claim.
 - `C15` is the asymptotic statement. It adds no independent mathematical
   content beyond `C14`; it is a corollary.
 - `C16` is deliberately `not-claimed`. The paper's saving only applies to
-  networks of size at least `2^217`, so it says nothing about deployed curves.
+  networks of size at least $2^{2^{17}}$ ($2^{131,072}$), with recursion parameter
+  $u_0 = \lfloor b / 2^{17} \rfloor = 0$ for $b \le 131,072$, so it says nothing about deployed curves.
 - `B1`-`B3` are useful oracles. They establish semantics and the extraction
   algebra, not the paper's low-degree constructions.
 - `C17` is the highest-risk track. A refutation of `C2` would make `C14` and
